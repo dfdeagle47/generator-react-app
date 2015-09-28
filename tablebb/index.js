@@ -47,11 +47,10 @@ this.prompt(prompts, function(props) {
     this.properties = [];
 
     this.fields.forEach(function(field) {
-        this.properties.push(field + ' : ' + '' < value > '');
+        this.properties.push(field + ' : ' + '\'<value>\'');
     }.bind(this));
 
     this.properties = this.properties.join(',');
-
 
     cb();
 
