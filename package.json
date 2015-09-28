@@ -1,41 +1,52 @@
 {
-  "name": "generator-react-app",
-  "version": "0.1.9",
-  "description": "A generator for Yeoman with React, jQuery, Backbone, Bootstrap, Browserify, Express and Mongoose",
-  "keywords": [
-    "yeoman-generator", "react", "bootstrap", "mongoose", "express", "jquery", "backbone", "browserify"
-  ],
-  "homepage": "https://github.com/k33g/generator-react-app",
-  "bugs": "https://github.com/k33g/generator-react-app/issues",
-  "author": {
-    "name": "@k33g_org",
-    "email": "ph.charriere@gmail.com",
-    "url": "https://github.com/k33g"
-  },
-  "main": "app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/k33g/generator-react-app.git"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "dependencies": {
-    "yeoman-generator": "~0.14.0"
-  },
-  "devDependencies": {
-    "mocha": "~1.14.0"
-  },
-  "peerDependencies": {
-    "yo": ">=1.0.0"
-  },
-  "engines": {
-    "node": ">=0.8.0",
-    "npm": ">=1.2.10"
-  },
-  "licenses": [
-    {
-      "type": "MIT"
+    "name": "generator-react-app",
+    "version": "0.1.9",
+    "description": "A generator for Yeoman with React, jQuery, Backbone, Bootstrap, Browserify, Express and Mongoose",
+    "keywords": [
+        "yeoman-generator", "react", "bootstrap", "mongoose", "express", "jquery", "backbone", "browserify"
+    ],
+    "homepage": "https://github.com/k33g/generator-react-app",
+    "bugs": "https://github.com/k33g/generator-react-app/issues",
+    "author": {
+        "name": "@k33g_org",
+        "email": "ph.charriere@gmail.com",
+        "url": "https://github.com/k33g"
+    },
+    "main": "app/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/k33g/generator-react-app.git"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "dependencies": {
+        "yeoman-generator": "~0.14.0"
+    },
+    "devDependencies": {
+        "mocha": "~1.14.0"
+    },
+    "peerDependencies": {
+        "yo": ">=1.0.0"
+    },
+    "engines": {
+        "node": ">=0.8.0",
+        "npm": ">=1.2.10"
+    },
+    "licenses": [{
+        "type": "MIT"
+    }],
+    "eslintConfig": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "plugins": [
+            "react"
+        ],
+        "rules" :{
+            "no-debugger" : 0,
+            "quotes": [1, "single", "avoid-escape"],
+            "semi": 1
+        }
     }
-  ]
 }

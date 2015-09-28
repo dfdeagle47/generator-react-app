@@ -7,13 +7,13 @@
 		document.querySelector('<%= componentName %>')
 	);
 */
-var React = require('react')
-	, $ = window.jQuery = require("jquery")
-	, bootstrap = require("../bower_components/bootstrap/dist/js/bootstrap.min"); 
+'use strict';
 
+var React = require('react') ,
+	$ = window.jQuery = require("jquery"),
+	bootstrap = require("../bower_components/bootstrap/dist/js/bootstrap.min");
 
 var <%= componentName %> = React.createClass({
-
 	getInitialState: function() {},
 
 	render: function() {
@@ -34,6 +34,7 @@ var <%= componentName %> = React.createClass({
 			</div>
 		);
 	},
+
 	componentDidMount: function() {
 		$('#'+this.props.id+' ul a').click(function (e) {
 			e.preventDefault()
@@ -41,6 +42,7 @@ var <%= componentName %> = React.createClass({
 		})
 		$('#'+this.props.id+' ul a:first').tab('show')
 	},
+
 	componentWillMount: function() {}
 });
 

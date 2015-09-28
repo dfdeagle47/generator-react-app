@@ -1,9 +1,9 @@
 /*=== <%= name %> Model ===*/
+'use strict';
 
 var mongoose = require('mongoose');
 
 var <%= name %>Model = function() {
-
 	var <%= name %>Schema = mongoose.Schema({
 		<%= schema %>
 	});

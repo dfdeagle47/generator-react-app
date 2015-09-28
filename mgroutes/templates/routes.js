@@ -1,4 +1,6 @@
 /*=== <%= name %> CRUD Routes ===*/
+'use strict';
+
 var <%= name %>sCtrl = require("../controllers/<%= name %>sCtrl");
 
 var <%= name %>sRoutes = function(app) {
@@ -22,7 +24,6 @@ var <%= name %>sRoutes = function(app) {
 	app.delete("/<%= url %>/:id", function(req, res) {
 		<%= name %>sCtrl.delete(req, res);
 	});
-
 }
 
 module.exports = <%= name %>sRoutes;

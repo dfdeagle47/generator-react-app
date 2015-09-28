@@ -1,4 +1,7 @@
+'use strict';
+
 var AllRoutes = function(app, mongoose) {
-	//foo
-}
+    //foo
+};
+
 module.exports = AllRoutes;

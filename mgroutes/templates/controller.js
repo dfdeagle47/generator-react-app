@@ -1,4 +1,5 @@
 /*=== <%= name %> Controller ===*/
+'use strict';
 
 var <%= name %> = require("../models/<%= name %>")();
 
@@ -9,22 +10,26 @@ var <%= name %>sCtrl = {
 			res.send(<%= _.slugify(name) %>);
 		});
 	},
+
 	fetchAll : function(req, res) {
 		<%= name %>.find(function (err, <%= _.slugify(name) %>s) {
 			res.send(<%= _.slugify(name) %>s);
 		});
 	},
+
 	fetch : function(req, res) {
 		<%= name %>.find({_id:req.params.id}, function (err, <%= _.slugify(name) %>s) {
 			res.send(<%= _.slugify(name) %>s[0]);
 		});
 	},
+
 	update : function(req, res) {
 		delete req.body._id
 		<%= name %>.update({_id:req.params.id}, req.body, function (err, <%= _.slugify(name) %>) {
 			res.send(<%= _.slugify(name) %>);
 		});
 	},
+
 	delete : function(req, res) {
 		<%= name %>.findOneAndRemove({_id:req.params.id}, function (err, <%= _.slugify(name) %>) {
 			res.send(<%= _.slugify(name) %>);

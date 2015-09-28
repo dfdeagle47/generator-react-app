@@ -7,20 +7,22 @@
 		document.querySelector('<%= componentName %>')
 	);
 */
+'use strict';
 
-var React = require('react')
-	, Backbone = require("backbone")
-	, <%= modelName %>Model = require("../modules/models/<%= modelName %>Model")
-	, <%= modelName %>sCollection = require("../modules/models/<%= modelName %>sCollection");
+var React = require('react'),
+	Backbone = require("backbone"),
+	<%= modelName %>Model = require("../modules/models/<%= modelName %>Model"),
+	<%= modelName %>sCollection = require("../modules/models/<%= modelName %>sCollection");
 
 var <%= componentName %> = React.createClass({
-
 	getInitialState: function() {
-		return {data : [], message : ""};
+		return {
+			data: [],
+			message: ""
+		};
 	},
 
 	render: function() {
-
 		var <%= _.slugify(modelName) %>sNodes = this.state.data.map(function(<%= _.slugify(modelName) %>){
 			var deleteLink = "#delete_<%= _.slugify(modelName) %>/" + <%= _.slugify(modelName) %>._id;
 
@@ -55,12 +57,14 @@ var <%= componentName %> = React.createClass({
 				this.setState({
 					message  : err.responseText + " " + err.statusText
 				});
-			}.bind(this))
+			}.bind(this));
 	},
+
 	componentWillMount: function() {
 		this.get<%= modelName %>s();
 		setInterval(this.get<%= modelName %>s, this.props.pollInterval);
 	},
+
 	componentDidMount: function() {
 		var Router = Backbone.Router.extend({
 			routes : {
@@ -75,10 +79,8 @@ var <%= componentName %> = React.createClass({
 				this.navigate('/');
 			}
 		});
-		this.router = new Router()
+		this.router = new Router();
 	}	
-
 });
 
 module.exports = <%= componentName %>;
-

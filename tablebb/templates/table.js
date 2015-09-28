@@ -7,36 +7,36 @@
 		document.querySelector('<%= componentName %>')
 	);
 */
+'use strict';
 
-var React = require('react')
-	, Backbone = require("backbone")
-	, <%= modelName %>Model = require("../modules/models/<%= modelName %>Model")
-	, <%= modelName %>sCollection = require("../modules/models/<%= modelName %>sCollection");
+var React = require('react'),
+	Backbone = require('backbone'),
+	<%= modelName %>Model = require('../modules/models/<%= modelName %>Model'),
+	<%= modelName %>sCollection = require('../modules/models/<%= modelName %>sCollection');
 
 var <%= componentName %> = React.createClass({
-
 	getInitialState: function() {
-		return {data : [], message : ""};
+		return {data : [], message : ''};
 	},
 
 	render: function() {
 
 		var <%= _.slugify(modelName) %>sRows = this.state.data.map(function(<%= _.slugify(modelName) %>){
-			var deleteLink = "#delete_<%= _.slugify(modelName) %>/" + <%= _.slugify(modelName) %>._id;
+			var deleteLink = '#delete_<%= _.slugify(modelName) %>/' + <%= _.slugify(modelName) %>._id;
 
 			return (
 				<tr>
 					<% _.each(fields, function(field) { %><td>{<%= _.slugify(modelName) %>.<%= field %>}</td>
 					<% }); %>
-					<td><a href={deleteLink}>delete{" "}{<%= _.slugify(modelName) %>._id}</a></td>
+					<td><a href={deleteLink}>delete{' '}{<%= _.slugify(modelName) %>._id}</a></td>
 				</tr>
 			);
 		});
 
 		return (
-			<div className="table-responsive">
+			<div className='table-responsive'>
 				<strong>{this.state.message}</strong>
-				<table className="table table-striped table-bordered table-hover" >
+				<table className='table table-striped table-bordered table-hover' >
 					<thead>
 						<tr>
 							<% _.each(fields, function(field) { %><th><%= field %></th><% }); %>
@@ -61,7 +61,7 @@ var <%= componentName %> = React.createClass({
 			}.bind(this))
 			.fail(function(err){
 				this.setState({
-					message  : err.responseText + " " + err.statusText
+					message  : err.responseText + ' ' + err.statusText
 				});
 			}.bind(this))
 	},
@@ -74,20 +74,20 @@ var <%= componentName %> = React.createClass({
 	componentDidMount: function() {
 		var Router = Backbone.Router.extend({
 			routes : {
-				"delete_<%= _.slugify(modelName) %>/:id" : "delete<%= modelName %>"
+				'delete_<%= _.slugify(modelName) %>/:id' : 'delete<%= modelName %>'
 			},
 			initialize : function() {
-				console.log("Initialize router of <%= componentName %> component");
+				console.log('Initialize router of <%= componentName %> component');
 			},
 			delete<%= modelName %> : function(id){
-				console.log("=== delete <%= _.slugify(modelName) %> ===", id);
+				console.log('=== delete <%= _.slugify(modelName) %> ===', id);
 				new <%= modelName %>Model({_id:id}).destroy();
 				this.navigate('/');
 			}
 		});
-		this.router = new Router()
-	}
 
+		this.router = new Router();
+	}
 });
 
 module.exports = <%= componentName %>;

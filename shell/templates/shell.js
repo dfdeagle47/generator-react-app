@@ -7,11 +7,11 @@
 		document.querySelector('<%= componentName %>')
 	);
 */
+'use strict';
 
 var React = require('react')
 
 var <%= componentName %> = React.createClass({
-
 	getInitialState: function() {
 		return {content:"..."};
 	},
@@ -24,8 +24,8 @@ var <%= componentName %> = React.createClass({
 		);
 	},
 	componentWillMount: function() {},
-	componentDidMount: function() {}
 
+	componentDidMount: function() {}
 });
 
 module.exports = <%= componentName %>;

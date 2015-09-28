@@ -1,4 +1,6 @@
-var Backbone = require("backbone");
+'use strict';
+
+var Backbone = require('backbone');
 
 var <%= modelName %>Model = Backbone.Model.extend({
 	defaults : function (){
@@ -6,8 +8,8 @@ var <%= modelName %>Model = Backbone.Model.extend({
 			<%= defaults %>
 		}
 	},
-	urlRoot : "<%= url %>",
-	idAttribute: "_id"
+	urlRoot : '<%= url %>',
+	idAttribute: '_id'
 });
 
 module.exports = <%= modelName %>Model;

@@ -7,14 +7,16 @@
 		document.querySelector('<%= componentName %>')
 	);
 */
+'use strict';
 
-var React = require('react')
-	, <%= modelName %>Model = require("../modules/models/<%= modelName %>Model");
+var React = require('react'), <%= modelName %>Model = require("../modules/models/<%= modelName %>Model");
 
 var <%= componentName %> = React.createClass({
-
 	getInitialState: function() {
-		return {data : [], message : ""};
+		return {
+		    data: [],
+		    message: ""
+		};
 	},
 
 	render: function() {
@@ -33,7 +35,9 @@ var <%= componentName %> = React.createClass({
 	},
 
 	componentDidMount: function() {},
+
 	componentWillMount: function() {},
+
 	handleSubmit : function() {
 		<% _.each(fields, function(field) { %>var <%= field %> = this.refs.<%= field %>.getDOMNode().value.trim();
 		<% }); %>
@@ -62,7 +66,6 @@ var <%= componentName %> = React.createClass({
 
 		return false;
 	}
-
 });
 
 module.exports = <%= componentName %>;
