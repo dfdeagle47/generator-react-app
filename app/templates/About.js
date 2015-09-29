@@ -5,7 +5,7 @@ var React = require('react'),
     $ = window.jQuery = require('jquery'),
     markdown = require('markdown')
         .markdown;
-debugger;
+
 var About = React.createClass({
     componentDidMount: function() {
         $.get(this.props.docLocation, function(data) {
